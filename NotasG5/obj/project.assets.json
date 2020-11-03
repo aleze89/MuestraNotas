@@ -1,0 +1,66 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Gaby de enfermeria\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Gaby de enfermeria\\Documents\\Curso Comunidad IT\\06 - Practica NET\\NotasG5\\MuestraNotas\\NotasG5\\NotasG5.csproj",
+      "projectName": "NotasG5",
+      "projectPath": "C:\\Users\\Gaby de enfermeria\\Documents\\Curso Comunidad IT\\06 - Practica NET\\NotasG5\\MuestraNotas\\NotasG5\\NotasG5.csproj",
+      "packagesPath": "C:\\Users\\Gaby de enfermeria\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Gaby de enfermeria\\Documents\\Curso Comunidad IT\\06 - Practica NET\\NotasG5\\MuestraNotas\\NotasG5\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Gaby de enfermeria\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
