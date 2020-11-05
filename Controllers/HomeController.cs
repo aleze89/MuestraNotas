@@ -9,6 +9,15 @@ using Notes.Models;
 
 namespace Notes.Controllers
 {
+     public class TestController : Controller
+    {
+        public readonly NotasContext db;
+        public TestController(NotasContext context)
+        {
+            db = context;
+        }
+    
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -28,19 +37,30 @@ namespace Notes.Controllers
             return View();
         }
 
+         public JsonResult ConsultarNotas()
+        {
+            return Json(db.Notas);
+        }
+
+        public string CrearNota(string titulo, string texto)
+        {
+            Nota nuevaNota = new Nota{
+                Titulo = titulo,
+                Cuerpo = texto
+            };
+
+            db.Notas.Add(nuevaNota);
+            db.SaveChanges();
+            return "Ok!!";
+        }
+
+   
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+   }
 
-    public class TestController : Controller
-    {
-        private readonly NotasContext db;
-        public TestController(NotasContext context)
-        {
-            db = context;
-        }
-    }
 }
