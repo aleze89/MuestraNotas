@@ -11,21 +11,41 @@ namespace NotasG5.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> logger;
+        private readonly NotasContext db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, 
+            NotasContext contexto)
         {
-            _logger = logger;
+            this.logger = logger;
+            this.db = contexto;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(db.Notas.ToList());
         }
 
         public IActionResult Privacy()
         {
             return View();
+        }
+        //Hay que mostrar todas las notas en una vista (consultar datos y pasar los datos)
+        public JsonResult ConsultarNotas()
+        {
+            return Json(db.Notas.ToList());
+        }
+
+        public JsonResult CrearNota(string titulo, string texto)
+        {
+            Nota nuevaNota = new Nota{
+                Titulo = titulo,
+                Cuerpo = texto
+            };
+
+            db.Notas.Add(nuevaNota);
+            db.SaveChanges();
+            return Json(nuevaNota);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
