@@ -34,4 +34,13 @@ namespace Notes.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+
+    public class TestController : Controller
+    {
+        private readonly NotasContext db;
+        public TestController(NotasContext context)
+        {
+            db = context;
+        }
+    }
 }
