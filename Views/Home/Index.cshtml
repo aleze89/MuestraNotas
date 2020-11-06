@@ -1,4 +1,4 @@
-﻿@Model.
+﻿@model List<Nota>
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -6,5 +6,25 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Tengo @Model.Count notas </p>   @* Cuenta la cantidad de elementos en la lista y los muestra *@
+    <div class="card-columns">
+        @foreach (var item in Model)
+        {
+           <div class="card">
+                <h2 class="card-title">@item.Titulo</h2>
+                <p class="card-text">@item.Cuerpo</p>
+           </div> 
+        }
+        
+            
+    </div>
+
+
+
+
+
+
+
+
+
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

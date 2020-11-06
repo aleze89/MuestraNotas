@@ -9,27 +9,24 @@ using Notes.Models;
 
 namespace Notes.Controllers
 {
-     public class TestController : Controller
-    {
-        public readonly NotasContext db;
-        public TestController(NotasContext context)
-        {
-            db = context;
-        }
+   
     
 
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> logger;
+        private readonly NotasContext db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,
+        NotasContext contexto)
         {
-            _logger = logger;
+            this.logger = logger;
+            this.db = contexto;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(db.Notas.ToList());
         }
 
         public IActionResult Privacy()
@@ -39,10 +36,10 @@ namespace Notes.Controllers
 
          public JsonResult ConsultarNotas()
         {
-            return Json(db.Notas);
+            return Json(db.Notas.ToList());
         }
 
-        public string CrearNota(string titulo, string texto)
+        public JsonResult CrearNota(string titulo, string texto)
         {
             Nota nuevaNota = new Nota{
                 Titulo = titulo,
@@ -51,7 +48,7 @@ namespace Notes.Controllers
 
             db.Notas.Add(nuevaNota);
             db.SaveChanges();
-            return "Ok!!";
+            return Json(nuevaNota);
         }
 
    
@@ -61,6 +58,6 @@ namespace Notes.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
-   }
+   
 
 }
