@@ -169,3 +169,6 @@ C:\Users\Gaby de enfermeria\Documents\Curso Comunidad IT\06 - Practica NET\Notas
 C:\Users\Gaby de enfermeria\Documents\Curso Comunidad IT\06 - Practica NET\NotasG5\MuestraNotas\NotasG5\obj\Debug\netcoreapp3.1\NotasG5.dll
 C:\Users\Gaby de enfermeria\Documents\Curso Comunidad IT\06 - Practica NET\NotasG5\MuestraNotas\NotasG5\obj\Debug\netcoreapp3.1\NotasG5.pdb
 C:\Users\Gaby de enfermeria\Documents\Curso Comunidad IT\06 - Practica NET\NotasG5\MuestraNotas\NotasG5\obj\Debug\netcoreapp3.1\NotasG5.genruntimeconfig.cache
+C:\Users\Gaby de enfermeria\Documents\Curso Comunidad IT\06 - Practica NET\NotasG5\MuestraNotas\NotasG5\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Gaby de enfermeria\Documents\Curso Comunidad IT\06 - Practica NET\NotasG5\MuestraNotas\NotasG5\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Gaby de enfermeria\Documents\Curso Comunidad IT\06 - Practica NET\NotasG5\MuestraNotas\NotasG5\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
