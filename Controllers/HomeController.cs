@@ -29,12 +29,17 @@ namespace Notes.Controllers
             return View(db.Notas.ToList());
         }
 
+        public IActionResult CargarNotas()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
         }
 
-         public JsonResult ConsultarNotas()
+        public JsonResult ConsultarNotas()
         {
             return Json(db.Notas.ToList());
         }
