@@ -43,7 +43,7 @@ namespace Notes.Controllers
         {
             return Json(db.Notas.ToList());
         }
-
+        [HttpPost]
         public JsonResult CrearNota(string titulo, string texto)
         {
             Nota nuevaNota = new Nota{
