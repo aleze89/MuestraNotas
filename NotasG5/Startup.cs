@@ -26,6 +26,14 @@ namespace NotasG5
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.Addession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(10);
+                options.Cookie.Name = ".Notas.Session";
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+                 
+            });
 
             services.AddDbContext<NotasContext>(options => 
                 options.UseSqlite(Configuration.GetConnectionString("NotasContext")));
@@ -50,6 +58,8 @@ namespace NotasG5
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
