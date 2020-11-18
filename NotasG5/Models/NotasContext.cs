@@ -10,6 +10,7 @@ namespace NotasG5.Models
 
         }
         public DbSet<Nota> Notas { get; set; }
+        
         public DbSet<Usuario> Usuarios { get; set; }
     }
 }
