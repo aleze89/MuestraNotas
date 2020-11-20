@@ -56,6 +56,31 @@ namespace Notes.Controllers
             return Json(nuevaNota);
         }
 
+         public JsonResult AgregarUsuarioASession(string mail, string nombre)
+        {
+            Usuario nuevoUsuario = new Usuario{
+                Mail= mail,
+                Nombre = nombre
+                
+            };
+            HttpContext.Session.Set<Usuario>("UsuarioLogueado", nuevoUsuario);
+            return Json(nuevoUsuario);
+        }
+     
+        public JsonResult ConsultarUsuario()
+        {
+            var usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+            if(usuario != null)
+            {
+                return Json(usuario);
+            }
+            else
+            {
+                return Json("No está logueado");
+            }
+
+        }
+
    
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

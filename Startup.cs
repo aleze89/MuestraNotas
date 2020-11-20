@@ -25,6 +25,15 @@ namespace Notes
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+             services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                    options.IdleTimeout = TimeSpan.FromMinutes(10);
+                    options.Cookie.Name = ".Notes.Session";
+                    options.Cookie.HttpOnly = true;
+                    options.Cookie.IsEssential = true;
+            });
+            
             services.AddControllersWithViews();
 
             services.AddDbContext<NotasContext>(options =>
@@ -50,6 +59,8 @@ namespace Notes
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
