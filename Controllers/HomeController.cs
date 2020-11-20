@@ -34,6 +34,11 @@ namespace Notes.Controllers
             return View();
         }
 
+        public IActionResult CargarUsuarios()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
@@ -43,6 +48,7 @@ namespace Notes.Controllers
         {
             return Json(db.Notas.ToList());
         }
+
         [HttpPost]
         public JsonResult CrearNota(string titulo, string texto)
         {
@@ -56,6 +62,7 @@ namespace Notes.Controllers
             return Json(nuevaNota);
         }
 
+        [HttpPost]
          public JsonResult AgregarUsuarioASession(string mail, string nombre)
         {
             Usuario nuevoUsuario = new Usuario{
